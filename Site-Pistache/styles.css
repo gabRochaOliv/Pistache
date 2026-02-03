@@ -110,12 +110,23 @@ ul {
 
     /* Mobile Notch Support */
     padding-top: max(var(--spacing-sm), env(safe-area-inset-top));
-    margin-top: -1px;
-    /* Removes hairline gaps */
-    border-top: 1px solid var(--color-chocolate);
-    /* Extends color */
+    /* Keep safe area padding */
 
     box-shadow: 0 5px 20px rgba(62, 39, 35, 0.4);
+}
+
+/* Pseudo-element to cover bouncing/overscroll area at the top */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: -100vh;
+    /* Extend way up */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-chocolate);
+    z-index: -1;
+    /* Behind the content */
 }
 
 .nav-content {

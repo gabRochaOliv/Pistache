@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprenda a fazer ovos de páscoa gourmet de pistache e criar uma renda extra.">
+    <title>Pistache | Ovos Gourmet & Renda Extra</title>
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/P..png" type="image/x-icon">
+    <link rel="icon" href="img/P..png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Chocolate Drip Intro Animation -->
+    <div id="chocolate-drip-overlay" aria-hidden="true">
+        <div class="drip-container">
+            <!-- Glossy chocolate wave constructed with CSS/SVG -->
+            <svg class="drip-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="chocGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#5D4037;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#3E2723;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="gloss" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur" />
+                        <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.75" specularExponent="20"
+                            result="specOut">
+                            <fePointLight x="-5000" y="-10000" z="20000" />
+                        </feSpecularLighting>
+                        <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
+                        <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1"
+                            k4="0" />
+                    </filter>
+                </defs>
+                <path fill="url(#chocGradient)" filter="url(#gloss)" d="M0,0L1440,0L1440,160L0,160Z" class="drip-base">
+                </path>
+                <!-- Individual drips integrated into the path or separate for animation flexibility. 
+                     Here we use a complex path for the wave and separate elements for drips in CSS for easy vertical animation. 
+                     Actually, to ensure organic feel without heavy assets, we will use the CSS implementation in styles.css 
+                     targeted at .drip-col elements inside this container.
+                -->
+            </svg>
+            <div class="drips">
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Pistache.</a>
+            <div class="nav-badge">
+                <span class="icon">★</span> Garantia de 7 dias
+            </div>
+        </div>
+        <div class="nav-drips">
+            <svg class="drip-svg-nav" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path
+                    d="M0,0 H1440 V40 C1350,40 1350,110 1250,110 C1150,110 1150,40 1050,40 C950,40 950,90 850,90 C750,90 750,40 650,40 C550,40 550,120 450,120 C350,120 350,40 250,40 C150,40 150,80 50,80 C20,80 0,60 0,60 Z">
+                </path>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content fade-in">
+                <span class="eyebrow">Método Exclusivo & Lucrativo</span>
+                <h1>Transforme Pistache em <span class="highlight-text">Lucro Real</span> nesta Páscoa</h1>
+                <p class="hero-sub">A Forma Simples de Criar Renda com <strong>Ovos Gourmet</strong>.</p>
+
+                <div class="trust-pills">
+                    <span class="pill">✓ Fácil de aplicar</span>
+                    <span class="pill">✓ Baixo investimento</span>
+                    <span class="pill">✓ Alta demanda</span>
+                </div>
+
+                <a href="#offer" class="cta-button pulse">Quero Aprender Agora</a>
+
+                <div class="bottom-social-proof hero-social-proof">
+                    <div class="avatar-stack">
+                        <!-- Placeholders - User will replace images -->
+                        <span class="avatar-circle"
+                            style="background-image: url('img/pessoas/pessoa1.avif'); background-color: #ddd;"></span>
+                        <span class="avatar-circle"
+                            style="background-image: url('img/pessoas/pessoa2.avif'); background-color: #ccc;"></span>
+                        <span class="avatar-circle"
+                            style="background-image: url('img/pessoas/pessoa3.avif'); background-color: #bbb;"></span>
+                        <span class="avatar-circle"
+                            style="background-image: url('img/pessoas/pessoa4.avif'); background-color: #aaa;"></span>
+                    </div>
+                    <p class="join-text"> Junte-se a <strong>1.200+ pessoas criando renda extra na Páscoa</strong></p>
+                </div>
+            </div>
+
+            <!-- Hero Image Integration -->
+            <div class="hero-visual fade-in delay-200">
+                <div class="visual-circle circle-1"></div>
+                <div class="visual-circle circle-2"></div>
+                <div class="image-container">
+                    <img src="img/delicioso.jpeg" alt="Ovo de Pistache Gourmet com recheio cremoso" class="hero-img">
+                    <div class="floating-badge">
+                        <span>Cremoso 🤤</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-bottom"></div>
+    </header>
+
+    <!-- What You Get Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-header center fade-in">
+                <h2>O Que Você Vai Receber</h2>
+                <p>Muito mais que receitas, um modelo de negócios validado.</p>
+            </div>
+
+            <!-- Product Showcase Carousel -->
+            <div class="p-gallery-container fade-in">
+                <div class="p-gallery-track">
+                    <!-- Set 1 -->
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache1.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache3.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache5.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache6.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache2.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache7.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache4.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+
+                    <!-- Set 2 (Duplicate for Infinity) -->
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache1.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache2.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache3.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache4.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache5.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache6.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                    <div class="p-slide">
+                        <div class="p-slide-item">
+                            <img src="img/pistache7.png" alt="Ovo de Pistache">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card feature-card fade-in">
+                    <div class="card-icon">📖</div>
+                    <h3>O E-book Completo</h3>
+                    <p>Guia definitivo com passo a passo ilustrado para criar ovos de pistache perfeitos.</p>
+                    <ul class="feature-list">
+                        <li>Receita Chocolate Branco & Pistache</li>
+                        <li>Versão Sem Açúcar (Zero)</li>
+                        <li>Versão Crocante Especial</li>
+                    </ul>
+                </div>
+
+                <div class="card feature-card highlight fade-in delay-100">
+                    <div class="badge-bonus">BÔNUS 1</div>
+                    <div class="card-icon">🥣</div>
+                    <h3>Segredo do Creme Perfeito</h3>
+                    <p>Aprenda a minha receita base que garante um pistache equilibrado, cremoso e que não enjoa.</p>
+                    <small>Valor isolado: <strike>R$ 47,00</strike></small>
+                </div>
+
+                <div class="card feature-card fade-in delay-200">
+                    <div class="badge-bonus">BÔNUS 2</div>
+                    <div class="card-icon">💰</div>
+                    <h3>Manual de Vendas</h3>
+                    <p>Técnicas de fotografia com celular, apresentação que valoriza o produto e precificação correta.
+                    </p>
+                    <small>Valor isolado: <strike>R$ 37,00</strike></small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Content Modules -->
+    <section class="section modules alt-bg">
+        <div class="container">
+            <div class="row reverse-mobile">
+                <div class="col-visual fade-in">
+                    <!-- Book Container with Hinge Logic -->
+                    <div class="book-container-hinge" id="interactive-book">
+
+                        <!-- The Static "Inside" Page (Always visible but covered initially) -->
+                        <div class="book-inside-static">
+                            <div class="chapter-preview">
+                                <h6>CAPÍTULO 01</h6>
+                                <h5>O Ouro Verde</h5>
+                                <p>"O pistache não é apenas um ingrediente, é uma experiência..."</p>
+                                <span class="read-more">Continue lendo no E-book</span>
+                            </div>
+                        </div>
+
+                        <!-- The Rotating Cover -->
+                        <div class="book-cover-hinge">
+                            <div class="cover-design">
+                                <span class="title">Pistache.</span>
+                                <span class="subtitle">Guia do Artesanal</span>
+                                <div class="spine-visual"></div>
+                            </div>
+                            <!-- Hint is attached to the cover -->
+                            <div class="click-hint-badge">👆 Abrir</div>
+                        </div>
+
+                        <!-- Visual Spines/Pages depth -->
+                        <div class="book-side-pages"></div>
+                    </div>
+                </div>
+                <div class="col-text fade-in">
+                    <h2>O Caminho Para o Sucesso</h2>
+                    <p class="lead">Domine técnicas de chocolataria fina sem complicações.</p>
+
+                    <div class="module-list">
+                        <div class="module-item">
+                            <span class="mod-number">01</span>
+                            <div class="mod-info">
+                                <h4>Introdução ao Mercado Gourmet</h4>
+                                <p>Por que o pistache é a tendência mais lucrativa do momento.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <span class="mod-number">02</span>
+                            <div class="mod-info">
+                                <h4>As 3 Receitas de Ouro</h4>
+                                <p>Chocolate Branco Nobre, Zero Açúcar e Crocante Texturizado.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <span class="mod-number">03</span>
+                            <div class="mod-info">
+                                <h4>Acabamento Premium</h4>
+                                <p>Como deixar seus ovos com cara de vitrine de confeitaria francesa.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <span class="mod-number">04</span>
+                            <div class="mod-info">
+                                <h4>Precificação & Lucro</h4>
+                                <p>Planilha mental para nunca ter prejuízo e cobrar o valor justo.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <span class="mod-number">05</span>
+                            <div class="mod-info">
+                                <h4>Módulo Vendas</h4>
+                                <p>Como atrair clientes pelo Instagram e WhatsApp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section class="section audience">
+        <div class="container">
+            <div class="grid-2">
+                <div class="audience-box for-you fade-in">
+                    <h3>Este Guia é Para Você Se...</h3>
+                    <ul>
+                        <li>✨ Quer uma fonte de renda extra rápida.</li>
+                        <li>✨ Ama confeitaria, mas tem pouco tempo.</li>
+                        <li>✨ É iniciante e nunca trabalhou com chocolate.</li>
+                        <li>✨ Já faz doces e quer atualizar seu cardápio.</li>
+                    </ul>
+                </div>
+                <div class="audience-box not-for-you fade-in delay-100">
+                    <h3>Não é Para Você Se...</h3>
+                    <ul>
+                        <li>❌ Procura fórmulas mágicas sem trabalho.</li>
+                        <li>❌ Não gosta de seguir métodos testados.</li>
+                        <li>❌ Acha que produtos gourmet não vendem.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header center fade-in">
+                <h2>Veja como foi a experiência de quem aplicou esse método</h2>
+            </div>
+            <div class="grid-3"> <!-- Changed to grid-3 for better fit of 6 items -->
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-in delay-100">
+                    <div class="quote-icon">❝</div>
+                    <p class="test-text">"Nossa, essa aula de recheios foi pra mim! O creme de pistache fica perfeito.
+                        😭🙏"</p>
+                    <div class="test-author">
+                        <div class="author-info">
+                            <h5>Maria S.</h5>
+                            <span class="location">08:32</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-in delay-200">
+                    <div class="quote-icon">❝</div>
+                    <p class="test-text">"Começar a produção assim muda tudo. Obrigado pelo método Pistache! 🙏"</p>
+                    <div class="test-author">
+                        <div class="author-info">
+                            <h5>Pedro L.</h5>
+                            <span class="location">06:45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-in delay-300">
+                    <div class="quote-icon">❝</div>
+                    <p class="test-text">"Eu não conseguia temperar chocolate, agora não perco nem 1g. ✨"</p>
+                    <div class="test-author">
+                        <div class="author-info">
+                            <h5>Ana C.</h5>
+                            <span class="location">07:15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card fade-in delay-100">
+                    <div class="quote-icon">❝</div>
+                    <p class="test-text">"Minha esposa e eu produzimos juntos. Virou nossa renda extra oficial. ❤️"</p>
+                    <div class="test-author">
+                        <div class="author-info">
+                            <h5>Lucas M.</h5>
+                            <span class="location">06:58</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card fade-in delay-200">
+                    <div class="quote-icon">❝</div>
+                    <p class="test-text">"Melhor investimento. Com a venda de 3 ovos já paguei o curso. 💫"</p>
+                    <div class="test-author">
+                        <div class="author-info">
+                            <h5>Julia R.</h5>
+                            <span class="location">09:22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card fade-in delay-300">
+                    <div class="quote-icon">❝</div>
+                    <p class="test-text">"As fotos das aulas são incríveis. Me inspirei e vendi só pela foto! 🎧"</p>
+                    <div class="test-author">
+                        <div class="author-info">
+                            <h5>Carlos F.</h5>
+                            <span class="location">07:41</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price/Offer Section -->
+    <section class="section offer" id="offer">
+        <div class="container narrow">
+            <div class="offer-card urgency-mode fade-in">
+
+                <!-- New Compact Header with Scarcity & Social Proof -->
+                <div class="offer-header-redesign">
+                    <p class="scarcity-text">⚠️ Últimas 46 vagas com este preço!</p>
+
+                    <div class="timer-compact">
+                        <span>Oferta expira em:</span>
+                        <span class="timer-digits">
+                            <span id="hours">02</span>:<span id="minutes">45</span>:<span id="seconds">02</span>
+                        </span>
+                    </div>
+
+                    <p class="social-proof">
+                        <span class="live-dot"></span> 15 pessoas vendo agora
+                    </p>
+                </div>
+
+                <div class="offer-body-redesign">
+                    <h3 class="plan-label">Pacote Completo</h3>
+
+                    <div class="price-showcase">
+                        <span class="old-price-small">R$ 197,00</span>
+                        <span class="big-price-huge pulse-price">R$ 37,00</span>
+
+                        <div class="discount-pill">50% OFF - Preço de Lançamento</div>
+                        <p class="price-analogy">Menos que uma pizza no fim de semana.</p>
+                    </div>
+
+                    <ul class="benefits-list-redesign">
+                        <li><span class="check">✓</span> Método Passo a Passo (Zero ao Avançado)</li>
+                        <li><span class="check">✓</span> Receitas de Ouro (Crocante, Branco, Zero)</li>
+                        <li><span class="check">✓</span> Acesso Vitalício (Sem mensalidade)</li>
+                        <li><span class="check">✓</span> <strong>Bônus:</strong> Guia de Atrair Clientes</li>
+                    </ul>
+
+                    <a href="#" class="cta-button big-btn pulse-fast">Garantir o Meu Acesso Agora</a>
+
+                    <div class="security-lock">
+                        🔒 Pagamento 100% Seguro
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq alt-bg">
+        <div class="container narrow">
+            <div class="section-header center fade-in">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+
+            <div class="accordion fade-in">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Como recebo o e-book?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>O acesso é imediato! Assim que o pagamento for confirmado, você receberá um e-mail com o link
+                            para baixar todo o material e os bônus.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Preciso de equipamentos caros?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>De forma alguma. O método foi desenvolvido para ser feito na cozinha da sua casa, com
+                            utensílios básicos que você provavelmente já tem.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Sou iniciante, vou conseguir fazer?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Sim! O passo a passo é detalhado, desde a escolha dos ingredientes até a finalização. É
+                            perfeito para quem está começando do zero.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Quais as formas de pagamento?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Aceitamos cartão de crédito, PIX e boleto bancário. A plataforma é 100% segura e seus dados
+                            estão protegidos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="brand">
+                <span class="footer-logo">Pistache.</span>
+                <p>Ovos Gourmet & Marketing.</p>
+            </div>
+            <div class="links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Pistache. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

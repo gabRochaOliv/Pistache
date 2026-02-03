@@ -101,13 +101,20 @@ ul {
 
 .navbar {
     position: sticky;
-    /* Fixes navbar to top */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
+    /* Increased z-index */
     background-color: var(--color-chocolate);
-    padding-top: var(--spacing-sm);
+
+    /* Mobile Notch Support */
+    padding-top: max(var(--spacing-sm), env(safe-area-inset-top));
+    margin-top: -1px;
+    /* Removes hairline gaps */
+    border-top: 1px solid var(--color-chocolate);
+    /* Extends color */
+
     box-shadow: 0 5px 20px rgba(62, 39, 35, 0.4);
 }
 
